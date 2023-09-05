@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h> 
+#include <time.h>
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    int a=99, b=100, x=96;
+    int digit_1[a+1];
+    int digit_2[a+1];
+    int result[b+1];
+    using int result_pol=0;
+    
+    while(a>x){
+        boul jester_shild = true;
+        while(jester_shild == true){
+            std::cout << "\nenter the digits from 1 to 9 in the cell of the first array\n";
+            int g;
+            std::cin >> g;
+            if(g / 10 == 0)&&(g != 0){
+                jester_shild = false;
+            }
+            if(jester_shild=false){
+                digit_1[a]=g;
+                cout << "\n" << digit_1[a] <<"\n";
+                a--;
+            
+            }
+            
+        }
+    }
+    // is_digit(num[i]) == 1 && (num[i] >= 0 && num[i] < 10)
+    while(a>x){
+        boul jester_shild = true;
+        while(jester_shild == true){
+            std::cout << "\nenter the digits from 1 to 9 in the cell of the first array\n";
+            int g;
+            std::cin >> g;
+            if(g / 10 == 0)&&(g != 0){
+                jester_shild = false;
+            }
+            if(jester_shild == false){
+                digit_1[a]=g;
+                cout << "\n" << digit_1[a] <<"\n";
+                a--;
+            }
+            
+        }
+    }
+    
+    
+    for (int i=0; i<a; i++){
+        s= 
+    }
+
+    return 0;
+}
