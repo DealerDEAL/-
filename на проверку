@@ -1,0 +1,132 @@
+#include <stdio.h>
+#include <string>
+#include <stdlib.h> 
+#include <time.h>
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+
+using namespace std;
+
+std::string convert(int arr[], int n) {
+    std::string s;
+    for (int i = 0; i < n; i++) {
+        s += std::to_string(arr[i]);
+    }
+    return s;
+}
+
+int main()
+{
+    int a1=49, b=50, x=47, a2=49;
+    int digit_1[a1+1];
+    int digit_2[a2+1];
+    int result_fin[b+1];
+    unsigned long long int result_pol1;
+    unsigned long long int result_pol2;
+    do{
+        bool jester_shild = true;
+        while(jester_shild == true){
+            std::cout << "\nenter the digits from 1 to 9 in the cell of the first array\n";
+            int g;
+            std::cin >> g;
+            if(g <= 9 && g != 0){
+                jester_shild = false;
+            }
+            if(jester_shild==true){
+                cout << "error";
+            }
+            if(jester_shild==false){
+                digit_1[a1]=g;
+                cout << "\n" << digit_1[a1] <<"\n";
+                //cout<<"\n"<<a1<<"\n";
+                a1--;
+            }
+        }
+    }while(a1>=x);
+    // is_digit(num[i]) == 1 && (num[i] >= 0 && num[i] < 10)
+    do{
+        bool jester_shild = true;
+        while(jester_shild == true){
+            std::cout << "\nenter the digits from 1 to 9 in the cell of the second array\n";
+            int l;
+            std::cin >> l;
+            if(l <=9 && l != 0){
+                jester_shild = false;
+            }
+            if(jester_shild==true){
+                cout << "error";
+            }
+            if(jester_shild == false){
+                digit_2[a2]=l;
+                cout << "\n" << digit_2[a2] <<"\n";
+                a2--;
+                //cout<<a2<<"\n";
+            }
+            
+        }
+    }while(a2>=x);
+    
+    int n1 = sizeof(digit_1) / sizeof(*digit_1);
+ 
+    std::string inp1 = convert(digit_1, n1);
+    
+    const char* c_inp1 = inp1.c_str();
+ 
+    // Use atoi() to convert C-string to integer
+    result_pol1 = atoi(c_inp1);
+    
+    //int i;
+    
+    //i=result_pol1
+    
+    cout << "\n" << result_pol1;
+    
+    
+    int n2 = sizeof(digit_2) / sizeof(*digit_2);
+    
+    std::string inp = convert(digit_2, n2);
+    
+    const char* c_inp = inp.c_str();
+ 
+    // Use atoi() to convert C-string to integer
+    result_pol2 = atoi(c_inp);
+    
+    cout << "\n" << result_pol2;
+    
+    int result;
+    
+    cout << "\n+-1 or --2 or *-3 or /-4 \n";
+    int answer;
+    cin >> answer;
+    
+    if(answer==1){
+    result=result_pol1+result_pol2;
+    }
+    
+    if(answer==2){
+    result=result_pol1-result_pol2;
+    }
+ 
+    if(answer==3){
+    result=result_pol1*result_pol2;
+    }
+    
+    if(answer==4){
+    result=result_pol1/result_pol2;
+    }
+    
+    //cout << "\n" << result;
+    
+    do{
+        result_fin[b]=result%10;
+        b--;
+    }while(b>=x);
+    
+    b=49;
+    for(int i=b; i>=x; i--){
+        cout<<result_fin[i];
+    }
+
+    return 0;
+}
